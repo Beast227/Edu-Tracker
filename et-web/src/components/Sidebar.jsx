@@ -3,7 +3,7 @@ import  { useState } from 'react';
 import PropTypes from 'prop-types'; 
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTh, faChartBar, faList, faBars, faHouseChimney,faBookOpenReader,faTrophy,faComments } from '@fortawesome/free-solid-svg-icons';
+import { faTh, faList, faBars, faHouseChimney,faBookOpenReader,faTrophy,faComments ,faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children, userType }) => {
@@ -19,11 +19,6 @@ const Sidebar = ({ children, userType }) => {
             path: "/about",
             name: "About Us",
             icon: <FontAwesomeIcon icon={faList} />
-        },
-        {
-            path: "/Signup",
-            name: "Signup",
-            icon: <FontAwesomeIcon icon={faChartBar} />
         },
         {
             path: "/dashboard",
@@ -62,9 +57,12 @@ const Sidebar = ({ children, userType }) => {
         <div className="container">
             <div className="sidebar" style={{ width: isOpen ? "250px" : "50px" }}>
                 <div className="top_sec">
-                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo" >Sidebar</h1>
-                    <div style={{ marginLeft: isOpen ? "30px" : "0px" }} className="bars" onClick={toggle} >
+                    {/* <h1 style={{ display: isOpen ? "block" : "none" }} className="logo" >Edu Tracker</h1> */}
+                    <div style={{ marginRight: isOpen ? "10px" : "0px" ,display:isOpen?"none":"block" }} className="bars" onClick={toggle} >
                         <FontAwesomeIcon icon={faBars} />
+                    </div>
+                    <div style={{ marginRight: isOpen ? "10px" : "0px" ,display:isOpen? "block":"none"}} className="bars" onClick={toggle} >
+                        <FontAwesomeIcon icon={faCircleXmark} />
                     </div>
                 </div>
                 {
