@@ -33,7 +33,8 @@ main{
 
 .bars{
   display: flex;
-  margin-left: 50px;
+  margin-left: auto;
+  margin-right:50px;
   font-size:25px;
 }
 
