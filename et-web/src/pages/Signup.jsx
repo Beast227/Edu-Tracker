@@ -1,5 +1,4 @@
-
-import  { useState } from 'react';
+import { useState } from 'react';
 import './signup.css';
 import PropTypes from 'prop-types';
 const SignUp = ({ onSignup }) => {
@@ -9,10 +8,10 @@ const SignUp = ({ onSignup }) => {
     const [error, setError] = useState('');
     const [isAdminLogin, setIsAdminLogin] = useState(false); // Track if it's admin login
 
-    // Define temporary admin and student credentials
-    const adminCredentials = { email: 'admin@example.com', password: 'admin123' };
-    const studentCredentials = { email: 'student@example.com', password: 'student123' };
-
+        // Define temporary admin and student credentials
+        const adminCredentials = { email: 'admin@example.com', password: 'admin123' };
+        const studentCredentials = { email: 'student@example.com', password: 'student123' };
+        
     const handleLogin = (e) => {
         e.preventDefault();
         if (loginType === 'signup') {

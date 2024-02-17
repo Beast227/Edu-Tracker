@@ -1,0 +1,70 @@
+
+:root {
+    --primary-color: #007bff; 
+    --light-blue: #cce5ff; 
+    --dark-blue: #004085;
+  }
+  
+  .table-container {
+    margin: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--dark-blue); 
+    background-color: var(--light-blue); 
+  }
+  
+  .table th, .table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: var(--primary-color); 
+    color: #fff;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: var(--light-blue);
+  }
+  
+  .table tbody tr:hover {
+    background-color: var(--primary-color); 
+    color: #fff; 
+  }
+  
+  .search-input-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .search-input {
+    padding: 8px 30px 8px 10px; 
+    width: 100%;
+    border: 1px solid var(--dark-blue);
+    border-radius: 4px;
+    background-color: var(--light-blue);
+    color: var(--dark-blue); 
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: var(--primary-color); 
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--dark-blue); 
+    transition: color 0.3s ease;
+  }
+  
+  .search-input:focus + .search-icon {
+    color: var(--primary-color);
+  }
+  

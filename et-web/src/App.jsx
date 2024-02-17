@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Dashboard from "./pages/admin/Dashboard";
 import About from "./pages/About";
@@ -11,12 +11,25 @@ import GradeBook from './pages/student/GradeBook';
 import Achievements from './pages/student/Achivements';
 import Feedback from './pages/Feedback';
 
-
 const App = () => {
   const [userType, setUserType] = useState(null);
 
+  // Check authentication state when the app initializes
+  useEffect(() => {
+    const storedUserType = localStorage.getItem('userType');
+    if (storedUserType) {
+      setUserType(storedUserType);
+    }
+  }, []);
+
   const handleSignup = (type) => {
-    setUserType(type); // Set the userType to the received type
+    setUserType(type);
+    localStorage.setItem('userType', type); // Store user type in localStorage
+  };
+
+  const handleLogout = () => {
+    setUserType(null);
+    localStorage.removeItem('userType'); // Remove user type from localStorage
   };
 
   const navigateToSignup = () => {
@@ -32,22 +45,22 @@ const App = () => {
           <Route path="/signup" element={<StudentSignup onSignup={handleSignup} />} />
         ) : userType === 'admin' ? (
           <Route
-          path="/*"
-          element={
-            <Sidebar userType={userType}>
-              <Routes>
-                <Route path="/Dashboard" element={<Dashboard />} />
-                <Route path="/About" element={<About />} />
-                <Route path="/ADHome" element={<AdminHome/>}/>
-              </Routes>
-            </Sidebar>
-          }
-        />
+            path="/*"
+            element={
+              <Sidebar userType={userType} handleLogout={handleLogout}>
+                <Routes>
+                  <Route path="/Dashboard" element={<Dashboard />} />
+                  <Route path="/About" element={<About />} />
+                  <Route path="/ADHome" element={<AdminHome/>}/>
+                </Routes>
+              </Sidebar>
+            }
+          />
         ) : (
           <Route
             path="/*"
             element={
-              <Sidebar userType={userType}>
+              <Sidebar userType={userType} handleLogout={handleLogout}>
                 <Routes>
                   <Route path="/STHome" element={<StudentHome/>}/>
                   <Route path="/about" element={<About />} />
