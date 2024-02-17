@@ -1,0 +1,134 @@
+:root {
+    --marian-blue: #1b449dff;
+    --caribbean-current: rgba(126, 215, 227, 0.842);
+    --verdigris: #5bc0beff;
+    --french-rose: #f1558eff;
+    --fluorescent-cyan: #6fffe9ff;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: var(--marian-blue);
+    padding: 20px 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: var(--verdigris);
+  }
+  
+  /* Main content */
+  .main-content {
+    padding: 20px;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section h1 {
+    font-size: 36px;
+    color: var(--french-rose);
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Card styles for services */
+  #services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .service {
+    background-color: var(--caribbean-current);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex: 0 1 calc(25% - 20px); /* Adjust card width based on number of cards per row */
+  }
+  
+  .service:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service h2 {
+    color: var(--french-rose);
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .service p {
+    color: #ffffffcc;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--marian-blue);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Media queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    nav ul {
+      display: block;
+      text-align: center;
+    }
+  
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .service {
+      flex: 0 1 calc(50% - 20px); /* 2 cards per row */
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .service {
+      flex: 0 1 calc(100% - 20px); /* 1 card per row */
+    }
+  }
+  

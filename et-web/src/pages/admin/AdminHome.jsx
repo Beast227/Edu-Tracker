@@ -1,8 +1,10 @@
+import './Dashboard.css'
+import Datatab from './DataTable';
 const AdminHome=()=>{
     return (
-        <>
-            <h1>Admin Home</h1>
-        </>
+        <div className="admin">
+            <Datatab/>
+        </div>
     );
 }
 

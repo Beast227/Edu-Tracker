@@ -50,7 +50,7 @@ main{
   background:#2a4aec;
   color: black;
   transition: all 0.5s;
-
+  
 }
 
 .active{
@@ -60,9 +60,9 @@ main{
 
 .icon, .icon_text{
   font-size: 20px;
-
+  white-space:nowrap;
 }
 
-.link .icon_text:hover{
-  color: rgba(40, 36, 36, 0.544);
+.link:hover .icon_text {
+  opacity: 1;
 }
